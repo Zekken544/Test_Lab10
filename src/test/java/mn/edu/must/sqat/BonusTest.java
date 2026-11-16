@@ -35,4 +35,8 @@ class BonusTest {
     void bonus_thresholdMetWithLongStreak_returns8() {
         assertEquals(8, DataFlowTargets.bonus(new int[]{1, 1, 1, 1, 1}, 5));
     }
+    @Test
+    void bonus_emptyAttendanceBelowThreshold_returns0() {
+        assertEquals(0, DataFlowTargets.bonus(new int[]{}, 1));
+    }
 }
